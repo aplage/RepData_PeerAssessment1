@@ -14,6 +14,9 @@ require(lattice)
 
 #  Getting Data
 
+#The *activity.zip* file from the Github repository for the assingment was unzipped.
+
+unzip("activity.zip")
 
 activity <- read.table("activity.csv", 
                        header = TRUE, 
@@ -36,6 +39,7 @@ activity %>%
 names(TotalStepsPerDay) <-c("date", "sumSteps")
 
 histogram(~TotalStepsPerDay$sumSteps,
+          main =  "Total Number of Steps taken each Day",
           xlab = " Total number of steps taken each day",
           ylab = "Frequency (%)")
 
@@ -101,6 +105,7 @@ names(newTotalStepsPerDay) <-c("date", "newsumSteps")
 
 histogram(~newsumSteps,
           data = newTotalStepsPerDay,
+          main = "Average daily activity pattern / newActivity dataset",
           xlab = "Daily total number of steps",
           ylab = "Frequency (%)"
           )

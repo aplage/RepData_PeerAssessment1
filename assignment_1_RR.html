@@ -202,15 +202,34 @@ median(newTotalStepsPerDay[[2]], na.rm  = TRUE) -&gt; mdnoNA</code></pre>
 <div id="do-these-values-differ-from-the-estimates-from-the-first-part-of-the-assignment-what-is-the-impact-of-imputing-missing-data-on-the-estimates-of-the-total-daily-number-of-steps" class="section level3">
 <h3>Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?</h3>
 <p>The following table compares the calculted mean and median using the dataset with missing values, <em>activity</em>, and the one with the missing values replaced by the mean of that interval, <em>newActivity</em>.</p>
-<pre class="r"><code>matrix(data = c(m,mnoNA,md, mdnoNA),  
+<pre class="r"><code>knitr::kable(
+matrix(data = c(m,mnoNA,md, mdnoNA),  
        nrow = 2, 
        byrow = FALSE, 
        dimnames = list(Dataset = c(&quot;activity&quot;, &quot;newActivity&quot;), Statistics = c(&quot;Mean&quot;, &quot;Median&quot;))
-       )</code></pre>
-<pre><code>##              Statistics
-## Dataset           Mean   Median
-##   activity    10766.19 10765.00
-##   newActivity 10766.19 10766.19</code></pre>
+       )
+)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">Mean</th>
+<th align="right">Median</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">activity</td>
+<td align="right">10766.19</td>
+<td align="right">10765.00</td>
+</tr>
+<tr class="even">
+<td align="left">newActivity</td>
+<td align="right">10766.19</td>
+<td align="right">10766.19</td>
+</tr>
+</tbody>
+</table>
 <p>As it was decided to use the mean for the interval in the new dataset, newActivity, no difference was observed in the mean value of daily number of steps, but a change in the median was observed, with an increase in the median value towards the mean value.</p>
 </div>
 </div>

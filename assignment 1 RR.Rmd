@@ -1,5 +1,5 @@
 ---
-title: "Assigment 1 - Reproducible Research - Coursera" 
+title: "Assigment 1 - Reproducible Research - Coursera"
 author: "aplage"
 date: "December 20, 2015"
 output: html_document
@@ -231,12 +231,14 @@ The mean number of steps per day in the new dataset, newActivity, was **`r optio
 The following table compares the calculted mean and median using the dataset with missing values, *activity*, and the one with the missing values replaced by the mean of that interval, *newActivity*.
 
 
-```{r tablemeanmedindatasets}
+```{r tablemeanmedindatasets, results='asis'}
+knitr::kable(
 matrix(data = c(m,mnoNA,md, mdnoNA),  
        nrow = 2, 
        byrow = FALSE, 
        dimnames = list(Dataset = c("activity", "newActivity"), Statistics = c("Mean", "Median"))
        )
+)
 ```
 
 
